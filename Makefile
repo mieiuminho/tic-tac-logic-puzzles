@@ -1,6 +1,7 @@
 CC         = gcc
 CFLAGS     = -std=c11 -O2 -Wall -Wextra -pedantic -g
-OBJS       = main.o puzzle.o solver.o historico.o valida.o generator.o
+OBJS       = $(patsubst %.c,%.o,$(wildcard $(SRCDIR)/*.c))
+SRCDIR     = src
 EXECUTAVEL = gerar
 
 $(EXECUTAVEL): $(OBJS)
